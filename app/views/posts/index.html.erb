@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>All Posts</title></head>
+<body>
+  <h1>Listing all posts</h1>
+  <table>
+    <tr><th>URL</th><th>title</tr>
+    <% @posts.each do |post| %>
+      <tr><td><%= post.url %></td>
+          <td><%= link_to post.title, post %></td>
+      </tr>
+    <%end%>
+  </table>
+</body>
+</html>
