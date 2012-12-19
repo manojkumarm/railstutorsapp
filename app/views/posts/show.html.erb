@@ -4,6 +4,14 @@
     <title>All Posts</title>
   </head>
   <body>
-    <h1><%= @post.title %></h1>
+    <h3><%= @post.comments.count %></h3>
+    <span><h1><%= link_to @post.title, @post %></h1></span>
+    <% if @post.comments.count > 0 %>
+      <% @post.comments.each do |comment| %>
+        <div><%= comment.content %></div>
+      <% end %>
+    <% else %>
+      <h5>There are no comments for this post.</h5>
+    <% end %>
   </body>
 </html>
