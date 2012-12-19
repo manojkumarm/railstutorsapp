@@ -4,9 +4,11 @@
 <body>
   <h1>Listing all posts</h1>
   <table>
-    <tr><th>URL</th><th>title</tr>
+    <tr><th># Comments</th><th>URL</th><th>title</tr>
     <% @posts.each do |post| %>
-      <tr><td><%= post.url %></td>
+      <tr>
+          <td><%= post.comments.count %></td>
+          <td><%= post.url %></td>
           <td><%= link_to post.title, post %></td>
       </tr>
     <%end%>
